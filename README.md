@@ -6,8 +6,14 @@ Esse é um exercico feito no curso "C# COMPLETO Programação Orientada a Objeto
 
 - C#
 - Utilizado Programação Orientada a Objetos
-- Adicionado ao projeto as jogadas: Roque-Pequeno, Roque-Grande, Promoção do peão, Xeque e Xeque-Mate
-
+## Operações possiveis:
+- Adicionado ao projeto a jogada Roque-Pequeno
+- Adicionado ao projeto a jogada Roque-Grande
+- Adicionado ao projeto a jogada Promoção do peão para Rainha
+- Adicionado ao projeto a jogada En Passant
+- Adicionado ao projeto a jogada Xeque
+- Adicionado ao projeto a jogada Xeque-Mate
+  
 ## Explicação:
 
 O Xadrez é um jogo de tabuleiro que é disputado entre dois jogadores utilizando um tabuleiro e 16 peças para cada lado, as peças são elas: Peões, Torres, Cavalos, Bispos, Rei e Rainha
