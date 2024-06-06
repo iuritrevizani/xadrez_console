@@ -1,11 +1,14 @@
-﻿using Microsoft.Win32.SafeHandles;
-using tabuleiro;
+﻿using tabuleiro;
 
 namespace xadrez
 {
+
     class Dama : Peca
     {
-        public Dama(Tabuleiro tab, Cor cor) : base(tab, cor) { }
+
+        public Dama(Tabuleiro tab, Cor cor) : base(tab, cor)
+        {
+        }
 
         public override string ToString()
         {
@@ -17,9 +20,11 @@ namespace xadrez
             Peca p = tab.peca(pos);
             return p == null || p.cor != cor;
         }
+
         public override bool[,] movimentosPossiveis()
         {
             bool[,] mat = new bool[tab.linhas, tab.colunas];
+
             Posicao pos = new Posicao(0, 0);
 
             // esquerda
@@ -50,7 +55,7 @@ namespace xadrez
             pos.definirValores(posicao.linha - 1, posicao.coluna);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
-                mat[posicao.linha, pos.coluna] = true;
+                mat[pos.linha, pos.coluna] = true;
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
@@ -75,11 +80,11 @@ namespace xadrez
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
-                if(tab.peca(pos) != null && tab.peca(pos).cor != cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
-                pos.definirValores(pos.linha -1, pos.coluna -1);
+                pos.definirValores(pos.linha - 1, pos.coluna - 1);
             }
 
             // NE
@@ -94,7 +99,7 @@ namespace xadrez
                 pos.definirValores(pos.linha - 1, pos.coluna + 1);
             }
 
-            // SE 
+            // SE
             pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -117,6 +122,7 @@ namespace xadrez
                 }
                 pos.definirValores(pos.linha + 1, pos.coluna - 1);
             }
+
             return mat;
         }
     }
