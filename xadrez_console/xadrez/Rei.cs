@@ -85,10 +85,10 @@ namespace xadrez
                 mat[pos.linha, pos.coluna] = true;
             }
 
-            // #jogadaespecial roque
+            // #Jogada Especial - Roque
             if (qteMovimentos == 0 && !partida.xeque)
             {
-                // #jogadaespecial roque pequeno
+                // #Jogada Especial - Roque Pequeno
                 Posicao posT1 = new Posicao(posicao.linha, posicao.coluna + 3);
                 if (testeTorreParaRoque(posT1))
                 {
@@ -99,7 +99,7 @@ namespace xadrez
                         mat[posicao.linha, posicao.coluna + 2] = true;
                     }
                 }
-                // #jogadaespecial roque grande
+                // #Jogada Especial - Roque Grande
                 Posicao posT2 = new Posicao(posicao.linha, posicao.coluna - 4);
                 if (testeTorreParaRoque(posT2))
                 {

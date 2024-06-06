@@ -39,7 +39,7 @@ namespace xadrez
                 capturadas.Add(pecaCapturada);
             }
 
-            // #jogadaespecial roque pequeno
+            // #Jogada Especial - Roque Pequeno
             if (p is Rei && destino.coluna == origem.coluna + 2)
             {
                 Posicao origemT = new Posicao(origem.linha, origem.coluna + 3);
@@ -49,7 +49,7 @@ namespace xadrez
                 tab.colocarPeca(T, destinoT);
             }
 
-            // #jogadaespecial roque grande
+            // #Jogada Especial - Roque Grande
             if (p is Rei && destino.coluna == origem.coluna - 2)
             {
                 Posicao origemT = new Posicao(origem.linha, origem.coluna - 4);
@@ -59,7 +59,7 @@ namespace xadrez
                 tab.colocarPeca(T, destinoT);
             }
 
-            // #jogadaespecial en passant
+            // #Jogada Especial - En Passant
             if (p is Peao)
             {
                 if (origem.coluna != destino.coluna && pecaCapturada == null)
@@ -92,7 +92,7 @@ namespace xadrez
             }
             tab.colocarPeca(p, origem);
 
-            // #jogadaespecial roque pequeno
+            // #Jogada Especial - Roque Pequeno
             if (p is Rei && destino.coluna == origem.coluna + 2)
             {
                 Posicao origemT = new Posicao(origem.linha, origem.coluna + 3);
@@ -102,7 +102,7 @@ namespace xadrez
                 tab.colocarPeca(T, origemT);
             }
 
-            // #jogadaespecial roque grande
+            // #Jogada Especial - Roque Grande
             if (p is Rei && destino.coluna == origem.coluna - 2)
             {
                 Posicao origemT = new Posicao(origem.linha, origem.coluna - 4);
@@ -112,7 +112,7 @@ namespace xadrez
                 tab.colocarPeca(T, origemT);
             }
 
-            // #jogadaespecial en passant
+            // #Jogada Especial - En Passant
             if (p is Peao)
             {
                 if (origem.coluna != destino.coluna && pecaCapturada == vulneravelEnPassant)
@@ -144,7 +144,7 @@ namespace xadrez
 
             Peca p = tab.peca(destino);
 
-            // #jogadaespecial promocao
+            // #Jogada Especial - Promoção
             if (p is Peao)
             {
                 if ((p.cor == Cor.Branca && destino.linha == 0) || (p.cor == Cor.Preta && destino.linha == 7))
@@ -176,7 +176,7 @@ namespace xadrez
                 mudaJogador();
             }
 
-            // #jogadaespecial en passant
+            // #Jogada Especial - En Passant
             if (p is Peao && (destino.linha == origem.linha - 2 || destino.linha == origem.linha + 2))
             {
                 vulneravelEnPassant = p;
