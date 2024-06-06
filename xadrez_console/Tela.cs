@@ -59,12 +59,13 @@ namespace xadrez_console
         {
             for (int i = 0; i < tab.linhas; i++)
             {
-                Console.Write(8 - i + " ");
+                Console.Write(8 - i + "| ");
                 for(int j = 0; j < tab.linhas; j++)
                 {                  
                         imprimirPeca(tab.peca(i,j));             }
                 Console.WriteLine();
             }
+            Console.WriteLine("  ---------------");
             Console.WriteLine("  a b c d e f g h");
         }
 
@@ -91,7 +92,7 @@ namespace xadrez_console
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("  a b c d e f g h");
+            Console.WriteLine("    a b c d e f g h");
             Console.BackgroundColor = fundoOriginal;
         }
 
